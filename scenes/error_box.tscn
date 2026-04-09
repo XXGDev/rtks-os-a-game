@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://dae0tw576r5q6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8s2k"]
+bg_color = Color(0, 0.6206668, 0.98, 0.78431374)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_up40b"]
+bg_color = Color(0, 0.6206668, 0.98, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5yw31"]
+bg_color = Color(0.9, 0.09000002, 0.09000002, 0.75686276)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aci7b"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a8s2k"]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8rlc"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.75, 0.75, 0.75, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="ErrorBox" type="Panel" unique_id=396120687]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -100.0
+offset_right = 200.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a8s2k")
+
+[node name="Topbar" type="Panel" parent="." unique_id=1422627417]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 25.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_up40b")
+
+[node name="close" type="Button" parent="Topbar" unique_id=1153154429]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.98
+anchor_top = 0.5
+anchor_right = 0.98
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -10.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_5yw31")
+text = "X"
+
+[node name="title" type="Label" parent="Topbar" unique_id=569104948]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Error"
+
+[node name="Content" type="Panel" parent="." unique_id=175363722]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.13
+anchor_right = 0.975
+anchor_bottom = 0.963
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_aci7b")
+
+[node name="msg" type="Label" parent="Content" unique_id=1858922536]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.75
+offset_top = -78.7125
+offset_right = 162.75
+offset_bottom = 37.82499
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_a8s2k")
+text = "Just an error.
+What'd you expect? (you're usually not supposed to get this message, so if you did then an error occured.. lol)"
+autowrap_mode = 2
+
+[node name="btnList" type="HBoxContainer" parent="Content" unique_id=1426336936]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.897
+anchor_right = 1.0
+anchor_bottom = 0.897
+offset_top = -23.0
+offset_bottom = 2.6297607
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="btn1" type="Button" parent="Content/btnList" unique_id=1707241697]
+visible = false
+clip_contents = true
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_v8rlc")
+text = "OK"
+
+[node name="btn2" type="Button" parent="Content/btnList" unique_id=324975123]
+visible = false
+clip_contents = true
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_v8rlc")
+text = "Abort"
+
+[node name="btn3" type="Button" parent="Content/btnList" unique_id=735862651]
+visible = false
+clip_contents = true
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_v8rlc")
+text = "Cancel"
